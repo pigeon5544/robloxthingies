@@ -1,4 +1,5 @@
-		function SilentUtility:GetClosestPlayer(TargetPart, TeamCheck, VisCheck, Enabled, FOVRadius)
+local SilentUtility = {}
+function SilentUtility:GetClosestPlayer(TargetPart, TeamCheck, VisCheck, Enabled, FOVRadius)
 			if not TargetPart then return end
 
 			local Closest
@@ -30,3 +31,4 @@
 			end
 			return Closest
 		end
+return SilentUtility
