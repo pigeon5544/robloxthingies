@@ -24,7 +24,7 @@ function SilentUtility:GetClosestPlayer(TargetPart, TeamCheck, VisCheck, Enabled
 				if not OnScreen then continue end
 
 				local Distance = (GetMousePosition() - ScreenPosition).Magnitude
-				if Distance <= (DistanceToMouse or (SilentSettings.Main.Enabled and FOVRadius) or 2000) then
+				if Distance <= (DistanceToMouse or (Enabled and FOVRadius) or 2000) then
 					Closest = ((TargetPart == "Random" and Character[ValidTargetParts[math.random(1, #ValidTargetParts)]]) or Character[TargetPart])
 					DistanceToMouse = Distance
 				end
