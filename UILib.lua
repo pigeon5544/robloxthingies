@@ -3379,16 +3379,16 @@ function library:CreateWindow(name, size, hidebutton)
         function tab:CreateConfigSystem(side)
             local configSystem = { }
 
-            configSystem.configFolder = "FemWare"
+            configSystem.configFolder = "Graphene"
             if (not isfolder(configSystem.configFolder)) then
                 makefolder(configSystem.configFolder)
             end
 
-            configSystem.sector = tab:CreateSector("Loadout Config", side or "left")
+            configSystem.sector = tab:CreateSector("Config", side or "left")
 
             local ConfigName = configSystem.sector:AddTextbox("Config Name", "", ConfigName, function() end, "")
             local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
-            local Config = configSystem.sector:AddDropdown("Loadouts", {}, default, false, function() end, "")
+            local Config = configSystem.sector:AddDropdown("Configss", {}, default, false, function() end, "")
             for i,v in pairs(listfiles(configSystem.configFolder)) do
                 if v:find(".txt") then
                     Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
