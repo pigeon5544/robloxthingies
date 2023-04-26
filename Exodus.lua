@@ -2860,9 +2860,9 @@ function library:Unload(fade)
         self.watermark:Destroy()
     end
 
-    if (self.Playerlist) then
+    --[[if (self.Playerlist) then
         self.Playerlist.object:Destroy()
-    end
+    end--]]
 
     for list, _ in next, library.lists do
         list:Destroy()
