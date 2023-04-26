@@ -2884,7 +2884,7 @@ end
 function library:Toggle()
     if not self.opening then
         self.opening = true
-        self.Playerlist.object.Visible = self.Playerlist.toggled and not self.open or false
+        --self.Playerlist.object.Visible = self.Playerlist.toggled and not self.open or false
 
         for window, types in next, library.windows do
             window.Visible = types.Visible and not self.open or false;
