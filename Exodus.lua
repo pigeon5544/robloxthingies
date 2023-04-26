@@ -3050,6 +3050,10 @@ function library:GetAutoLoadConfig()
 end
 
 function library:SaveConfig(name)
+    if not self:GetFile("configs", name, self.extension) then
+        self:CreateFile("configs", name)
+    end
+
     if typeof(name) == "string" and name:find("%S+") then
         local config = {}
 
